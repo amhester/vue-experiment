@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="datamanager.css">
+</head>
+<body id="DataManager">
+
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <a class="brand-logo">Geofeedia</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a><i class="material-icons">apps</i></a></li>
+                <li><a><i class="material-icons">account circle</i></a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="row">
+
+    <div id="AppNav" class="col s12 m4 l3">
+        <div id="LocationsTab" class="row">
+            <div class="col s12 m12 l12 tab-title"><router-link :to="/locations">Locations</router-link></div>
+        </div>
+
+        <div id="RecordingsTab" class="row">
+            <div class="col s12 m12 l12 tab-title">Recordings</div>
+            <ul>
+                <li><router-link :to="/recordings/active"><i class="material-icons">adjust</i> Active Recordings</router-link></li>
+                <li><router-link :to="/recordings/inactive"><i class="material-icons">beenhere</i> InActive Recordings</router-link></li>
+                <li><router-link :to="/recordings/scheduled"><i class="material-icons">schedule</i> Scheduled Recordings</router-link></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="Main" class="col s12 m8 l9">
+        <router-view></router-view>
+    </div>
+
+</div>
+
+{{#templates}}
+{{{.}}}
+{{/templates}}
+
+<!-- Scripts -->
+<script src="datamanager.js"></script>
+</body>
+</html>
