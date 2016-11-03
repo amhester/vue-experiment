@@ -28,7 +28,7 @@ module.exports = [
             return next();
         }
     },
-	
+
 	{
         type: ACTION_TYPES.POST,
         route: `${baseUrl}/paged`,

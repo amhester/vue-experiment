@@ -12,12 +12,12 @@ const gulp       = require('gulp'),
       fs         = require('fs');
 
 gulp.task('build:js', function () {
-    return browserify('./src/datamanager.app.js')
+    return browserify('./src/marketplace.app.js')
         .transform(babelify, { presets : [ 'es2015' ] })
         .bundle()
-        .pipe(source('./src/datamanager.app.js'))
+        .pipe(source('./src/marketplace.app.js'))
         .pipe(buffer())
-        .pipe(rename('datamanager.js'))
+        .pipe(rename('marketplace.js'))
         .pipe(sourceMaps.init({ loadMaps : true }))
         .pipe(sourceMaps.write('./maps/'))
         .pipe(gulp.dest('./dist/js/'));
@@ -27,7 +27,8 @@ gulp.task('build:css', function () {
     gulp.src('./node_modules/materialize-css/dist/fonts/**/*').pipe(gulp.dest('./dist/fonts/'));
 
     return gulp.src([
-            './node_modules/materialize-css/sass/materialize.scss',
+            './node_modules/bootstrap/scss/bootstrap.scss',
+            './node_modules/bootstrap/scss/bootstrap-flex.scss',
             './src/**/*.scss'
         ], { dot: true })
         .pipe(sass.sync().on('error', sass.logError))
@@ -35,9 +36,10 @@ gulp.task('build:css', function () {
 });
 
 gulp.task('build:html', function () {
-    let templates = ['./src/locations/locations.template.html'].map(t => fs.readFileSync(t, 'utf8'));
-    return gulp.src('./src/datamanager.template.html')
-        .pipe(mustache({ templates: templates }))
+    //let templates = ['./src/locations/locations.template.html'].map(t => fs.readFileSync(t, 'utf8'));
+    return gulp.src('./src/marketplace.template.html')
+        //.pipe(mustache({ templates: templates }))
+        .pipe(rename('marketplace.html'))
         .pipe(gulp.dest('./dist/'));
 });
 
