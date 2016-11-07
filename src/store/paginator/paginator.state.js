@@ -10,5 +10,5 @@ module.exports = {
     PagingType: '',
     UpdateMode: '',
     SelectedIds: [],
-    Filters: []
+    Filters: [{ Column: 'name', Value: '' }]
 };
