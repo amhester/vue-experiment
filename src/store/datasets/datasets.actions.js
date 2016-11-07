@@ -2,11 +2,10 @@
 
 const datasets = require('./../../services/datasets.service');
 
-///TODO: Change the parameters to grab the global state obj instead of the local one to this module
 module.exports = {
-    fetchDatasets ({ commit }, params) {
+    fetchDatasets ({ commit, rootState }) {
         datasets
-            .getPaged(params)
+            .getPaged(rootState.paginator)
             .then(data => commit({ type: 'setDatasets', datasets: data }))
             .catch(ex => commit({ type: 'log', message: ex }));
     },
@@ -18,24 +17,24 @@ module.exports = {
             .catch(ex => commit({ type: 'log', message: ex }));
     },
 
-    createDataset ({ commit, dispatch, state }, params) {
+    createDataset ({ commit, dispatch }, params) {
         datasets
             .create(params)
-            .then(data => dispatch('fetchDatasets', { paginator: state.paginator }))
+            .then(data => dispatch('fetchDatasets'))
             .catch(ex => commit({ type: 'log', message: ex }));
     },
 
-    updateDataset ({ commit, dispatch, state }, params) {
+    updateDataset ({ commit, dispatch }, params) {
         datasets
             .update(params)
-            .then(data => dispatch('fetchDatasets', { paginator: state.paginator }))
+            .then(data => dispatch('fetchDatasets'))
             .catch(ex => commit({ type: 'log', message: ex }));
     },
 
-    removeDataset ({ commit, dispatch, state }, params) {
+    removeDataset ({ commit, dispatch }, params) {
         datasets
             .remove(params)
-            .then(data => dispatch('fetchDatasets', { paginator: state.paginator }))
+            .then(data => dispatch('fetchDatasets'))
             .catch(ex => commit({ type: 'log', message: ex }));
     }
 };

@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Test Action 1",
+    "description": "This is a featured test action.",
+    "rating": 7,
+    "numberOfAccounts": 80,
+    "createdOn": "2016-01-12",
+    "updatedOn": "2016-11-07",
+    "createdBy": 1,
+    "active": true,
+    "featured": true
+  },
+  {
+    "id": 2,
+    "name": "Test Action 2",
+    "description": "This is a featured test action.",
+    "rating": 8,
+    "numberOfAccounts": 42,
+    "createdOn": "2016-09-12",
+    "updatedOn": "2016-09-12",
+    "createdBy": 1,
+    "active": true,
+    "featured": true
+  },
+  {
+    "id": 3,
+    "name": "Test Action 3",
+    "description": "This is a featured test action.",
+    "rating": 7,
+    "numberOfAccounts": 50,
+    "createdOn": "2016-08-17",
+    "updatedOn": "2016-11-07",
+    "createdBy": 1,
+    "active": true,
+    "featured": true
+  },
+  {
+    "id": 4,
+    "name": "Test Action 4",
+    "description": "This is a featured test action.",
+    "rating": 9,
+    "numberOfAccounts": 36,
+    "createdOn": "2016-11-04",
+    "updatedOn": "2016-11-04",
+    "createdBy": 1,
+    "active": true,
+    "featured": true
+  },
+  {
+    "id": 5,
+    "name": "Test Action 5",
+    "description": "This is just some test action, who really cares.",
+    "rating": 6,
+    "numberOfAccounts": 32,
+    "createdOn": "2016-04-06",
+    "updatedOn": "2016-04-06",
+    "createdBy": 1,
+    "active": true,
+    "featured": false
+  },
+  {
+    "id": 6,
+    "name": "Test Action 6",
+    "description": "This is just some test action, who really cares.",
+    "rating": 6,
+    "numberOfAccounts": 29,
+    "createdOn": "2016-04-06",
+    "updatedOn": "2016-04-06",
+    "createdBy": 1,
+    "active": true,
+    "featured": false
+  },
+  {
+    "id": 7,
+    "name": "Test Action 7",
+    "description": "This is just some test action, who really cares.",
+    "rating": 6,
+    "numberOfAccounts": 34,
+    "createdOn": "2016-04-06",
+    "updatedOn": "2016-04-06",
+    "createdBy": 1,
+    "active": true,
+    "featured": false
+  },
+  {
+    "id": 8,
+    "name": "Test Action 8",
+    "description": "This is just some test action, who really cares.",
+    "rating": 6,
+    "numberOfAccounts": 22,
+    "createdOn": "2016-04-06",
+    "updatedOn": "2016-04-06",
+    "createdBy": 1,
+    "active": true,
+    "featured": false
+  },
+  {
+    "id": 9,
+    "name": "Test Action 9",
+    "description": "This is just some test action, who really cares.",
+    "rating": 5,
+    "numberOfAccounts": 35,
+    "createdOn": "2016-04-06",
+    "updatedOn": "2016-04-06",
+    "createdBy": 1,
+    "active": true,
+    "featured": false
+  },
+  {
+    "id": 10,
+    "name": "Test Action 10",
+    "description": "This is just some test action, who really cares.",
+    "rating": 5,
+    "numberOfAccounts": 11,
+    "createdOn": "2016-04-06",
+    "updatedOn": "2016-04-06",
+    "createdBy": 1,
+    "active": true,
+    "featured": false
+  }
+]
