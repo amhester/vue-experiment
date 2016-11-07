@@ -1,6 +1,6 @@
 'use strict';
 
-const parse = require('./../services/querystring.service.js').parse;
+const parse = require('./../../services/querystring.service.js').parse;
 
 module.exports = store => {
     let route  = location.pathname,

@@ -1,7 +1,7 @@
 'use strict';
 
 const Q       = require('bluebird');
-const baseUrl = require('./../../app.config').baseUrl + '/datasets';
+const baseUrl = require('./../app.config').baseUrl + '/datasets';
 const $       = require('jquery');
 
 module.exports = {

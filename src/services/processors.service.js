@@ -1,7 +1,7 @@
 'use strict';
 
 const Q       = require('bluebird');
-const baseUrl = require('./../../app.config').baseUrl + '/processors';
+const baseUrl = require('./../app.config').baseUrl + '/processors';
 const $       = require('jquery');
 
 module.exports = {

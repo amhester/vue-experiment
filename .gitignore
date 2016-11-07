@@ -38,3 +38,6 @@ jspm_packages
 
 #IDE specific stuff
 .idea/
+
+#Distribution
+dist/

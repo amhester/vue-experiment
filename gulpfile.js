@@ -36,9 +36,11 @@ gulp.task('build:css', function () {
 });
 
 gulp.task('build:html', function () {
-    //let templates = ['./src/locations/locations.template.html'].map(t => fs.readFileSync(t, 'utf8'));
+    let templates = {
+        datasetTemplate: fs.readFileSync('./src/views/datasets.template.html', 'utf8')
+    };
     return gulp.src('./src/marketplace.template.html')
-        //.pipe(mustache({ templates: templates }))
+        .pipe(mustache(templates))
         .pipe(rename('marketplace.html'))
         .pipe(gulp.dest('./dist/'));
 });
