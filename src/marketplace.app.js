@@ -12,28 +12,28 @@ const MarketPlace = new Vue({
     },
     computed: {
         activeState () {
-            return store.state.nav.states.filter(s => s.active)[0].alias;
+            return store.getters.activeState;
         },
 
         featuredDatasets () {
-            return store.state.datasets.page.filter(d => d.featured);
+            return store.getters.featuredDatasets;
         },
 
         datasets () {
-            return store.state.datasets.page;
+            return store.getters.datasetsPage;
         },
 
         totalPages () {
-            return store.state.paginator.TotalPages;
+            return store.getters.totalPages;
         },
 
         currentPage () {
-            return store.state.paginator.CurrentPage;
+            return store.getters.currentPage;
         },
 
         sortColumn: {
             get () {
-                return store.state.paginator.Column;
+                return store.getters.column;
             },
             set (value) {
                 store.commit({ type: 'setSortColumn', column: value });
@@ -43,7 +43,7 @@ const MarketPlace = new Vue({
 
         pageFilter: {
             get () {
-                return store.state.paginator.Filters.length ? store.state.paginator.Filters[0].Value : '';
+                return store.getters.filter;
             },
             set (value) {
                 store.commit({ type: 'setPageFilter', filter: { Column: 'name', Value: value } });
@@ -63,5 +63,5 @@ const MarketPlace = new Vue({
     }
 });
 
-//store.dispatch('fetchDatasets');
-store.commit({ type: 'goto', route: '/actions', params: {} });
+store.dispatch('fetchDatasets');
+//store.commit({ type: 'goto', route: '/actions', params: {} });

@@ -7,7 +7,8 @@ module.exports = {
         datasets
             .getPaged(rootState.paginator)
             .then(data => {
-                commit({ type: 'setWholePaginator', paginator: data.paginator });
+                commit({ type: 'setTotalPages', paginator: data.paginator });
+                commit({ type: 'setTotalItemCount', paginator: data.paginator });
                 commit({ type: 'setDatasets', datasets: data.data });
             })
             .catch(ex => commit({ type: 'log', message: ex }));

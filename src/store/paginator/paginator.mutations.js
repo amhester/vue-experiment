@@ -31,7 +31,11 @@ module.exports = {
         }
     },
 
-    setWholePaginator (state, { paginator }) {
-        state = paginator;
+    setTotalPages (state, { paginator }) {
+        state.TotalPages = paginator.TotalPages;
+    },
+
+    setTotalItemCount (state, { paginator }) {
+        state.TotalItemCount = paginator.TotalItemCount;
     }
 };
