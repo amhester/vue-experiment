@@ -39,7 +39,11 @@ module.exports = [
             if(!paginator.Ascending) {
                 _datasets = _.reverse(_datasets);
             }
-            _datasets = _.chain(_datasets).remove((v,i) =>  i < ((paginator.CurrentPage - 1) * paginator.PageSize)).take(paginator.PageSize).value();
+            _.remove(_datasets, (v,i) => i < ((paginator.CurrentPage - 1) * paginator.PageSize));
+            _datasets = _.take(_datasets, paginator.PageSize);
+
+            paginator.TotalItemCount = _datasets.length;
+            paginator.TotalPages = Math.ceil(datasets.length / paginator.PageSize);
 
 			res.send(200, { paginator: paginator, data: _datasets });
             return next();

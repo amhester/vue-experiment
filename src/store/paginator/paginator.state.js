@@ -2,7 +2,7 @@
 
 module.exports = {
     Ascending: true,
-    Column: '',
+    Column: 'name',
     CurrentPage: 1,
     PageSize: 20,
     TotalItemCount: 0,

@@ -3,7 +3,7 @@
 const _ = require('lodash');
 
 module.exports = {
-    goto ({ nav }, { route, params }) {
+    goto (nav, { route, params }) {
         nav.stateParams = params;
         if(nav.redirect.hasOwnProperty(route)) {
             route = nav.redirect[route];

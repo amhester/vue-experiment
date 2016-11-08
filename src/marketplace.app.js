@@ -1,8 +1,7 @@
 'use strict';
 
-const Vue       = require('vue');
+const Vue       = require('vue/dist/vue.js');
 const $         = require('jquery');
-const bootstrap = require('bootstrap');
 const store     = require('./store/marketplace.store');
 
 const MarketPlace = new Vue({
@@ -63,3 +62,6 @@ const MarketPlace = new Vue({
         }
     }
 });
+
+//store.dispatch('fetchDatasets');
+store.commit({ type: 'goto', route: '/actions', params: {} });

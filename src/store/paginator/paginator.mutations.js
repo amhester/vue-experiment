@@ -29,5 +29,9 @@ module.exports = {
         if(filter.Column && filter.Value) {
             state.Filters = [filter];
         }
+    },
+
+    setWholePaginator (state, { paginator }) {
+        state = paginator;
     }
 };

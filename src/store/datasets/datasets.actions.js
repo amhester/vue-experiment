@@ -6,7 +6,10 @@ module.exports = {
     fetchDatasets ({ commit, rootState }) {
         datasets
             .getPaged(rootState.paginator)
-            .then(data => commit({ type: 'setDatasets', datasets: data }))
+            .then(data => {
+                commit({ type: 'setWholePaginator', paginator: data.paginator });
+                commit({ type: 'setDatasets', datasets: data.data });
+            })
             .catch(ex => commit({ type: 'log', message: ex }));
     },
 

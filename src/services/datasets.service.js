@@ -5,12 +5,14 @@ const baseUrl = require('./../app.config').baseUrl + '/datasets';
 const $       = require('jquery');
 
 module.exports = {
-    getPaged ({ paginator }) {
+    getPaged (paginator) {
         return new Q((resolve, reject) => {
             $.ajax({
                 url: baseUrl + '/paged',
                 method: 'POST',
-                data: { paginator },
+                data: JSON.stringify({ paginator: JSON.parse(JSON.stringify(paginator)) }),
+                dataType: 'json',
+                processData: false,
                 contentType: 'application/json',
                 timeout: 10000,
                 success: data => {
