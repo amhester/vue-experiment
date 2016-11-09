@@ -47,6 +47,7 @@ const MarketPlace = new Vue({
             },
             set (value) {
                 store.commit({ type: 'setPageFilter', filter: { Column: 'name', Value: value } });
+                store.dispatch('fetchDatasets');
             }
         }
     },
@@ -59,6 +60,10 @@ const MarketPlace = new Vue({
         changePage (page) {
             store.commit({ type: 'changePage', page });
             store.dispatch('fetchDatasets');
+        },
+
+        changeRoute (route) {
+            store.dispatch('changeRoute', { route, params: {} });
         }
     }
 });

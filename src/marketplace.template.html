@@ -29,9 +29,9 @@
     <div id="AppNav" class="side-nav">
         <div class="side-nav-header"><h4>Data Marketplace</h4></div>
         <ul>
-            <li v-bind:class="{ active: activeState === 'datasets' }"><a><i class="material-icons">library_books</i> Datasets</a></li>
-            <li v-bind:class="{ active: activeState === 'enrichment' }"><a><i class="material-icons">photo_filter</i> Enrichment</a></li>
-            <li v-bind:class="{ active: activeState === 'actions' }"><a><i class="material-icons">send</i> Actions</a></li>
+            <li v-bind:class="{ active: activeState === 'datasets' }" v-on:click="changeRoute('datasets')"><a><i class="material-icons">library_books</i> Datasets</a></li>
+            <li v-bind:class="{ active: activeState === 'enrichment' }" v-on:click="changeRoute('enrichment')"><a><i class="material-icons">photo_filter</i> Enrichment</a></li>
+            <li v-bind:class="{ active: activeState === 'actions' }" v-on:click="changeRoute('actions')"><a><i class="material-icons">send</i> Actions</a></li>
         </ul>
     </div>
 

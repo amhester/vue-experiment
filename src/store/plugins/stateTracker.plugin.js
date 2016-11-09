@@ -19,7 +19,8 @@ module.exports = store => {
         store.commit({
             type: 'goto',
             route,
-            params
+            params,
+            pushState: false
         });
     };
 };
