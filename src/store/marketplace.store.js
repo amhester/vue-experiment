@@ -1,6 +1,6 @@
 'use strict';
 
-const Vue         = require('vue');
+const Vue         = require('vue/dist/vue.js');
 const Vuex        = require('vuex');
 const actions     = require('./actions/actions.module');
 const authContext = require('./authContext/authContext.module');
